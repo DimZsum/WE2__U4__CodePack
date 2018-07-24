@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <!--Icons importieren-->
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="dist/app.js" defer="true"></script>
+    <title>Bildergalerie</title>
+</head>
+<body>
+    <div class="grid-container">
+        <!--Header-->
+        <div class="item1">
+            <div class="topnav">
+                <a href="#">1.Saison</a>
+                <a href="#">2.Saison</a>
+                <a href="#">3.Saison</a>
+                <a href="#">4.Saison</a>
+            </div>
+        </div>
+
+        <!--Menu-->
+        <div class="item2">
+            <p style="visibility: hidden">Hey ich bin das Menü links.</p>
+        </div>
+
+        <!--Main-->
+        <div class="item3">
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImg">
+                <div id="caption"></div>
+            </div>
+            <table>
+                <tr>
+                    <td class="tcol"><img id="img1" class="image" src="images/1.jpg" alt="Spanien, 22.03.2008 15:46" ><div><i class="fa fa-heart"></i><i id="file1" class="fa fa-file"></i></div></td>
+                    <td class="tcol"><img id="img2" class="image" src="images/2.jpg" alt="Griechenland, 23.03.2008 10:46" ><div><i class="fa fa-heart"></i><i id="file2" class="fa fa-file"></i></div></td>
+                    <td class="tcol"><img id="img3" class="image" src="images/3.jpg" alt="Deutschland, 24.03.2008 09:22" ><div><i class="fa fa-heart"></i><i class="fa fa-file"></i></div></td>
+                    <td class="tcol"><img id="img4" class="image" src="images/4.jpg" alt="Dänemark, 25.03.2008 12:36" ><div><i class="fa fa-heart"></i><i class="fa fa-file"></i></div></td>
+                </tr>
+                <tr>
+                    <td class="tcol"><img id="img5" class="image" src="images/5.jpg" alt="Italien, 26.03.2008 11:46" ><div><i class="fa fa-heart" ></i><i class="fa fa-file" ></i></div></td>
+                    <td class="tcol"><img id="img6" class="image" src="images/6.jpg" alt="Vietnam, 27.03.2008 12:46" ><div><i class="fa fa-heart" ></i><i class="fa fa-file" ></i></div></td>
+                    <td class="tcol"><img id="img7" class="image" src="images/7.jpg" alt="China, 28.03.2008 13:46" ><div><i class="fa fa-heart" ></i><i class="fa fa-file" ></i></div></td>
+                    <td class="tcol"><img id="img8" class="image" src="images/8.jpg" alt="Japan, 29.03.2008 14:46" ><div><i class="fa fa-heart" ></i><i class="fa fa-file" ></i></div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!--Right-->
+        <div class="item4">
+            <p style="visibility: hidden">Hey ich bin das Menü rechts.</p>
+            <button id="filterButton">Filter Favoriten</button>
+        </div>
+
+        <!--Footer-->
+        <div class="item5">
+            <!--Menu bottom -->
+            <div class="topnav">
+                <a href="#">Impressum</a>
+                <a href="#">Kontakt</a>
+                <a href="#">AGB</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

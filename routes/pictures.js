@@ -13,8 +13,11 @@ const express = require('express');
 const logger = require('debug')('we2:pictures');
 const codes = require('../restapi/http-codes');
 const HttpError = require('../restapi/http-error.js');
+//including mogoose from mongoDB
 const mongoose = require('mongoose');
+//use native of es6 promises
 mongoose.Promise = Promise;
+//connecting libary
 mongoose.connect('mongodb://localhost/we2',
     {promiseLibrary: Promise});
 const PictureModel = require('../models/picture.model.js');
@@ -26,12 +29,14 @@ const pictures = express.Router();
 
 const storeKey = 'pictures';
 
-// routes **************
+// getting every picture
 pictures.route('/')
     .get((req, res, next) => {
         // TODO replace store and use mongoose/MongoDB
-        // res.locals.items = store.select(storeKey);
+        // res.locals.items = store.select(storeKekiy);
+        //mogoose native find (select of mongoose) -> we can save functions in variables
         let query = PictureModel.find({});
+        //start query as promise
         query.exec()
             .catch(err => {
                 return next(err);
@@ -44,10 +49,12 @@ pictures.route('/')
             });
     })
     .post((req,res,next) => {
+        //setting timestamp in req body
         req.body.timestamp = new Date().getTime();
         // TODO replace store and use mongoose/MongoDB
-        // var result = store.insert(storeKey, req.body);
+        //constructor with mongo schema (schema is in models)
         let picture = new PictureModel(req.body);
+        //save in database system
         let query = picture.save();
         query
             .catch((err)=> {
@@ -92,8 +99,7 @@ pictures.route('/:id')
     })
     .put((req, res,next) => {
 
-        // TODO replace store and use mongoose/MongoDB
-        // store.replace(storeKey, req.body.id, req.body);
+        //findByIdAndUpdate is from mongo and updates the object
         PictureModel.findByIdAndUpdate(req.params.id, req.body,
             {runValidators:true, new: true})
             .catch( ()=> {
